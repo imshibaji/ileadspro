@@ -41,11 +41,15 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+        if($user->id == 1){
+            $user->assignRole('admin');
+            $user->assignStatus('active');
+        }
 
         event(new Registered($user));
 
         Auth::login($user);
-
+        $user->loggedIn();
         return to_route('dashboard');
     }
 }

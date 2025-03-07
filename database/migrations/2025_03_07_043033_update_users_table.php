@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('role')->default('user');
             $table->string('status')->default('inactive');
+            $table->boolean('is_login')->default(false);
             $table->bigInteger('total_logins')->default(0);
             $table->string('last_login')->nullable();
             $table->string('last_ip')->nullable();
