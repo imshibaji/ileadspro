@@ -35,6 +35,9 @@ test('profile information can be updated', function () {
 
     expect($user->name)->toBe('Test User');
     expect($user->email)->toBe('test@example.com');
+    expect($user->phone)->toBe('567856789');
+    expect($user->status)->toBe('inactive');
+    expect($user->role)->toBe('user');
     expect($user->email_verified_at)->toBeNull();
 });
 

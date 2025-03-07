@@ -118,12 +118,12 @@ class User extends Authenticatable
     }
 
     public function loggedOut(){
-        $this->last_login = now();
         $this->last_ip = request()->ip();
         $this->last_agent = request()->header('User-Agent');
         $this->last_page = request()->url();
         $this->last_session = request()->session()->getId();
         $this->is_login = false;
+        $this->last_logout = now();
         $this->save();
     }
 

@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('last_page')->nullable();
             $table->string('last_activity')->nullable();
             $table->string('last_session')->nullable();
+            $table->string('last_logout')->nullable();
         });
     }
 
@@ -44,6 +45,7 @@ return new class extends Migration
             $table->dropColumn('last_page');
             $table->dropColumn('last_activity');
             $table->dropColumn('last_session');
+            $table->dropColumn('last_logout');
         });
     }
 };
