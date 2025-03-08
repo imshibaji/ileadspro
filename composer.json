@@ -1,15 +1,16 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/react-starter-kit",
+    "name": "ileadspro/app",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
     "keywords": [
-        "laravel",
-        "framework"
+        "ileadspro",
+        "leads"
     ],
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "googleads/google-ads-php": "^26.1",
         "inertiajs/inertia-laravel": "^2.0",
         "laravel/framework": "^12.0",
         "laravel/passport": "^12.0",
@@ -17,6 +18,8 @@
         "laravel/sanctum": "^4.0",
         "laravel/socialite": "^5.18",
         "laravel/tinker": "^2.10.1",
+        "socialiteproviders/facebook": "^4.1",
+        "socialiteproviders/google": "^4.1",
         "tightenco/ziggy": "^2.4"
     },
     "require-dev": {

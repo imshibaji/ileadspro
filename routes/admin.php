@@ -8,12 +8,11 @@ use App\Http\Controllers\Admin\Emails;
 use App\Http\Controllers\Admin\Leads;
 use App\Http\Controllers\Admin\Sms;
 use App\Http\Controllers\Admin\Users;
-use Illuminate\Support\Facades\App;
+use App\Http\Middleware\AdminCheck;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
-Route::middleware(['auth', 'verified'])
-->prefix('admin')
+Route::middleware(['auth', 'verified', AdminCheck::class])
+->prefix('admin')->name('admin.')
 ->group(function () {
     Route::get('dashboard', [Dashboard::class, 'index'])->name('dashboard');
     Route::get('campaigns', [Campaigns::class, 'index'])->name('campaigns');

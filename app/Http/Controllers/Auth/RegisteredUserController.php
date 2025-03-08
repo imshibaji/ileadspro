@@ -50,6 +50,9 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
         $user->loggedIn();
-        return to_route('dashboard');
+        if($user->isAdmin()){
+            return to_route('admin.dashboard');
+        }
+        return to_route('user.dashboard');
     }
 }

@@ -1,7 +1,8 @@
+import { MenuItem } from "@/components/app-navbar";
 import { NavItem } from "@/types";
-import { LayoutGrid, Megaphone, PhoneCall , BinocularsIcon, CalendarCheckIcon, ActivityIcon, Mails, SmartphoneNfc, Users2Icon } from "lucide-react";
+import { LayoutGrid, Megaphone, PhoneCall , BinocularsIcon, CalendarCheckIcon, ActivityIcon, Mails, SmartphoneNfc, Users2Icon, UserCircle, User2, LayoutDashboard } from "lucide-react";
 
-export const appName: string = "IleadsPro Admin";
+export const appName: string = "iLeadsPro Admin";
 
 export const mainNavItems: NavItem[] = [
     {
@@ -44,6 +45,27 @@ export const mainNavItems: NavItem[] = [
         url: '/admin/users',
         icon: Users2Icon
     },
+];
+
+export const topNavItems: MenuItem[] = [
+    {
+        name: "Users",
+        url: "/users",
+        icon: UserCircle,
+        is_active: true,
+        children: [
+            {
+                name: "Profile",
+                url: "/settings/profile",
+                icon: User2,
+            },
+            {
+                name: "Dashboard",
+                url: "/user/dashboard",
+                icon: LayoutDashboard,
+            }
+        ]
+    }
 ];
 
 export const footerNavItems: NavItem[] = [

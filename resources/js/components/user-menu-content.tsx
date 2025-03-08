@@ -34,7 +34,7 @@ export function UserMenuContent({ user }: UserMenuContentProps) {
             {user.role === 'admin' && (
                 <DropdownMenuGroup>
                     <DropdownMenuItem asChild>
-                        <Link className="block w-full" href={ paths[1] === 'admin' ? route('user.dashboard') : route('dashboard')} as="button" prefetch onClick={cleanup}>
+                        <Link className="block w-full" href={ paths[1] === 'admin' ? route('user.dashboard') : route('admin.dashboard')} as="button" prefetch onClick={cleanup}>
                             <LayoutDashboard className="mr-2" />
                             Goto {paths[1] === 'admin' ? 'User' : 'Admin'}
                         </Link>

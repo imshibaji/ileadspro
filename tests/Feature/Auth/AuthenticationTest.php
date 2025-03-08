@@ -20,7 +20,7 @@ test('users can authenticate using the login screen', function () {
     ]);
 
     $this->assertAuthenticated();
-    $response->assertRedirect(route('dashboard', absolute: false));
+    $response->assertRedirect(route('user.dashboard', absolute: false));
 });
 
 test('users database checked logged in status', function () {
@@ -30,7 +30,7 @@ test('users database checked logged in status', function () {
         'email' => $user->email,
         'password' => 'password',
     ]);
-    $response->assertRedirect(route('dashboard', absolute: false));
+    $response->assertRedirect(route('user.dashboard', absolute: false));
 
     // Database checked After login
     $au = Auth::user();
