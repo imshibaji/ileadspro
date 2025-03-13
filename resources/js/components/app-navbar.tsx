@@ -4,8 +4,9 @@ import { Link } from "@inertiajs/react";
 
 export interface MenuItem {
     name: string;
-    url: string;
+    url?: string;
     icon?: LucideIcon | null;
+    href?: string;
     is_active?: boolean;
     children?: MenuItem[];
 }
@@ -16,7 +17,14 @@ export default function AppNavbar({ menus }: { menus: MenuItem[] }) {
             {menus.map((menu, i) => (
                 <MenubarMenu key={i}>
                     {!menu.children && (
-                        <Link href={menu.url}>
+                        menu.href?
+                        <a href={menu.href}>
+                            <MenubarTrigger className="flex items-center">
+                                {menu.icon && <menu.icon className="mr-2 h-4 w-4" />}
+                                {menu.name}
+                            </MenubarTrigger>
+                        </a>:
+                        <Link href={menu.url || ''}>
                             <MenubarTrigger className="flex items-center">
                                 {menu.icon && <menu.icon className="mr-2 h-4 w-4" />}
                                 {menu.name}
@@ -31,7 +39,14 @@ export default function AppNavbar({ menus }: { menus: MenuItem[] }) {
                             </MenubarTrigger>
                             <MenubarContent>
                                 {menu.children.map((child, index) => (
-                                    <Link key={index} href={child.url}>
+                                    child.href?
+                                    <a key={index} href={child.href}>
+                                        <MenubarItem className="flex items-center">
+                                            {child.icon && <child.icon className="mr-2 h-4 w-4" />}
+                                            {child.name}
+                                        </MenubarItem>
+                                    </a>:
+                                    <Link key={index} href={child.url || ''}>
                                         <MenubarItem className="flex items-center">
                                             {child.icon && <child.icon className="mr-2 h-4 w-4" />}
                                             {child.name}

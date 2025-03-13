@@ -11,7 +11,6 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/js/app.tsx',
                 'resources/js/leadspro.js',
-                'resources/js/actions.js',
             ],
             ssr: 'resources/js/ssr.tsx',
             refresh: true,

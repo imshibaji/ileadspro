@@ -9,15 +9,15 @@ const breadcrumbs: BreadcrumbItem[] = [
         href: '/user/dashboard',
     },
     {
-        title: 'Clients',
-        href: '/user/clients',
+        title: 'Users',
+        href: '/user/users',
     },
 ];
 
-export default function Activity() {
+export default function Users() {
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title="Leads" />
+            <Head title="Users" />
             <div className="flex h-full flex-1 flex-col gap-4 rounded-xl p-4">
                 <div className="grid auto-rows-min gap-4 md:grid-cols-3">
                     <div className="border-sidebar-border/70 dark:border-sidebar-border relative aspect-video overflow-hidden rounded-xl border">

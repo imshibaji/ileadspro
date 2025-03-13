@@ -1,6 +1,6 @@
 import { MenuItem } from "@/components/app-navbar";
 import { NavItem } from "@/types";
-import { LayoutGrid, Megaphone, PhoneCall , BinocularsIcon, CalendarCheckIcon, ActivityIcon, Mails, SmartphoneNfc, UserCircle, User2, LayoutDashboard } from "lucide-react";
+import { LayoutGrid, Megaphone, PhoneCall , BinocularsIcon, ActivityIcon, Mails, SmartphoneNfc, UserCircle, User2, MessageCircle, LucideBriefcaseBusiness, UsersIcon, Package, HelpCircle, ShieldEllipsisIcon, TentTree } from "lucide-react";
 
 export const appName: string = "iLeadsPro User";
 
@@ -21,14 +21,14 @@ export const mainNavItems: NavItem[] = [
         icon: BinocularsIcon
     },
     {
-        title: 'Dialer',
-        url: '/user/dialer',
-        icon: PhoneCall
-    },
-    {
         title: 'Emails',
         url: '/user/emails',
         icon: Mails
+    },
+    {
+        title: 'Dialer',
+        url: '/user/dialer',
+        icon: PhoneCall
     },
     {
         title: 'SMS',
@@ -36,13 +36,18 @@ export const mainNavItems: NavItem[] = [
         icon: SmartphoneNfc
     },
     {
-        title: 'Clients',
-        url: '/user/clients',
-        icon: CalendarCheckIcon
+        title: 'WhatsApp',
+        url: '/user/whatsapp',
+        icon: MessageCircle
     },
 ];
 
 export const topNavItems: MenuItem[] = [
+    {
+        name: "Support",
+        href: "tel:+918981009499",
+        icon: HelpCircle
+    },
     {
         name: "Users",
         url: "/users",
@@ -55,9 +60,14 @@ export const topNavItems: MenuItem[] = [
                 icon: User2,
             },
             {
-                name: "Dashboard",
-                url: "/user/dashboard",
-                icon: LayoutDashboard,
+                name: "Password",
+                url: "/settings/password",
+                icon: ShieldEllipsisIcon,
+            },
+            {
+                name: "Appearance",
+                url: "/settings/appearance",
+                icon: TentTree,
             }
         ]
     }
@@ -68,5 +78,20 @@ export const footerNavItems: NavItem[] = [
         title: 'Activity',
         url: '/user/activity',
         icon: ActivityIcon
-    }
+    },
+    {
+        title: 'Purchase',
+        url: '/user/purchase',
+        icon: Package
+    },
+    {
+        title: 'Users',
+        url: '/user/users',
+        icon: UsersIcon
+    },
+    {
+        title: 'Business',
+        url: '/user/business',
+        icon: LucideBriefcaseBusiness
+    },
 ];

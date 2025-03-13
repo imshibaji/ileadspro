@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers\User;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
-class Clients extends Controller
+class Users extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return inertia('user/clients');
+        return inertia('user/users');
     }
 
     /**

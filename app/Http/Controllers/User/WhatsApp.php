@@ -5,26 +5,14 @@ namespace App\Http\Controllers\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class Campaigns extends Controller
+class WhatsApp extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data = [
-            ['id' => 1, 'name' => "1st Campaign", 'status' => 'active', 'date' => '21th Feb'],
-            ['id' => 2, 'name' => "2nd Campaign", 'status' => 'active', 'date' => '21th Feb'],
-            ['id' => 3, 'name' => "3rd Campaign", 'status' => 'active', 'date' => '21th Feb'],
-            ['id' => 4, 'name' => "4th Campaign", 'status' => 'active', 'date' => '21th Feb'],
-        ];
-        return inertia('user/campaign/campaigns', [
-            'budgets'=> 5000,
-            'views' => 50000,
-            'clicks' => 1000,
-            'leads' => 100,
-            'campaigns' => $data
-        ]);
+        return inertia('user/whatsapp');
     }
 
     /**
@@ -32,7 +20,7 @@ class Campaigns extends Controller
      */
     public function create()
     {
-        return inertia('user/campaign/create');
+        //
     }
 
     /**
